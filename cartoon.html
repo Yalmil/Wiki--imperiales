@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imperiales Wiki</title>
+
+<link rel="icon" href="https://yalmil.github.io/Wiki--imperiales/imagenes/cartoon.png" type="image/png">
+<link rel="canonical" href="https://yalmil.pages.dev">
+
+<meta name="title" content="Cartoon - Imperiales Wiki">
+<meta name="description" content="Arelion Stormblade, el Guardián del Norte. Información completa sobre este legendario guerrero.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cartoon - Imperiales Wiki">
+<meta property="og:description" content="Wiki oficial de los imperiales.">
+<meta property="og:image" content="https://yalmil.github.io/Wiki--imperiales/imagenes/cartoon.png">
+<meta property="og:url" content="https://yalmil.pages.dev">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cartoon - Imperiales Wiki">
+<meta name="twitter:description" content="Wiki oficial de los imperiales.">
+<meta name="twitter:image" content="https://yalmil.github.io/Wiki--imperiales/imagenes/cartoon.png">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comic+Neue:wght@400;700&display=swap');
+  
+:root {
+  --rojo: #e63946;
+  --rojo-oscuro: #d00000;
+  --azul: #457b9d;
+  --azul-oscuro: #1d3557;
+  --amarillo: #ffd166;
+  --papel: #fefae0;
+  --linea: #333;
+  --sombra: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  min-height: 100vh;
+  background-color: var(--papel);
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.05) 24px, rgba(0, 0, 0, 0.05) 25px),
+    repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.05) 24px, rgba(0, 0, 0, 0.05) 25px);
+  color: var(--linea);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, transparent 50%, var(--rojo) 50%);
+  z-index: 100;
+  transform: rotate(0deg);
+  box-shadow: -3px 3px 5px var(--sombra);
+  border-radius: 0 0 0 10px;
+}
+
+header {
+  background: linear-gradient(90deg, var(--azul-oscuro) 0%, var(--azul) 100%);
+  color: white;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin: 30px 30px 0 30px;
+  border: 4px solid var(--linea);
+  border-radius: 15px;
+  box-shadow: 
+    8px 8px 0 var(--sombra),
+    inset 0 0 0 2px white;
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+
+.header-img-left {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+  filter: drop-shadow(2px 2px 0 var(--sombra));
+  background-image: url('https://via.placeholder.com/60x60/ffffff/000000?text=⚔️');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header-img-right {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+  filter: drop-shadow(2px 2px 0 var(--sombra));
+  background-image: url('https://via.placeholder.com/60x60/ffffff/000000?text=⚔️');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 
+    3px 3px 0 var(--azul-oscuro),
+    6px 6px 0 var(--sombra);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+header p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  opacity: 0.95;
+  margin: 0 auto;
+  color: var(--amarillo);
+  text-shadow: 2px 2px 0 var(--linea);
+  position: relative;
+  z-index: 1;
+  background-color: var(--rojo);
+  display: inline-block;
+  padding: 5px 20px;
+  border: 3px solid var(--linea);
+  border-radius: 30px;
+  transform: rotate(-2deg);
+  box-shadow: 3px 3px 0 var(--sombra);
+}
+
+main {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.contenido-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  margin: 2rem 0 3rem;
+}
+
+.perfil-card {
+  background-color: white;
+  border: 4px solid var(--linea);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 
+    10px 10px 0 var(--sombra),
+    inset 0 0 0 2px var(--papel);
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.perfil-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, transparent 50%, var(--rojo) 50%);
+  border-left: 4px solid var(--linea);
+  border-bottom: 4px solid var(--linea);
+  border-radius: 0 15px 0 0;
+  z-index: 1;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border: 5px solid var(--linea);
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 0 var(--sombra);
+  background-image: url('https://via.placeholder.com/200x200/457b9d/ffffff?text=ARELION');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.avatar::before {
+  display: none;
+}
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+
+.perfil-info {
+  margin-top: 1rem;
+}
+
+.perfil-info p {
+  margin-bottom: 1.2rem;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--linea);
+  border-radius: 10px;
+  position: relative;
+  font-weight: bold;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.perfil-info strong {
+  color: var(--rojo-oscuro);
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  border-bottom: 1px dashed var(--azul);
+  padding-bottom: 3px;
+}
+
+.info {
+  background-color: white;
+  border: 4px solid var(--linea);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 
+    10px 10px 0 var(--sombra),
+    inset 0 0 0 2px var(--papel);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.info:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    15px 15px 0 var(--sombra),
+    inset 0 0 0 2px var(--papel);
+}
+
+.info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, transparent 50%, var(--azul) 50%);
+  border-right: 4px solid var(--linea);
+  border-bottom: 4px solid var(--linea);
+  border-radius: 15px 0 0 0;
+  z-index: 1;
+}
+
+.info h2 {
+  font-size: 2rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 10px;
+  font-family: 'Architects Daughter', cursive;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 4px dashed var(--rojo);
+  display: inline-block;
+  z-index: 2;
+}
+
+.info h2::before {
+  content: "";
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--amarillo);
+  border: 3px solid var(--linea);
+  border-radius: 50%;
+  z-index: 1;
+  background-image: url('https://via.placeholder.com/30x30/ffd166/000000?text=⚔️');
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.info p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--linea);
+  line-height: 1.8;
+  padding: 0 10px;
+  position: relative;
+}
+
+.info p::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--rojo);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+.info ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.info li {
+  margin-bottom: 1.2rem;
+  padding-left: 50px;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.info li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--amarillo);
+  border: 3px solid var(--linea);
+  border-radius: 50%;
+  background-image: url('https://via.placeholder.com/25x25/ffd166/000000?text=⚡');
+  background-size: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 3px 3px 0 var(--sombra);
+}
+
+.info li:nth-child(2)::before {
+  background-image: url('https://via.placeholder.com/25x25/457b9d/ffffff?text=⚔️');
+  background-color: var(--azul);
+}
+
+.info li:nth-child(3)::before {
+  background-image: url('https://via.placeholder.com/25x25/ffd166/000000?text=🛡️');
+}
+
+.info li:nth-child(4)::before {
+  background-image: url('https://via.placeholder.com/25x25/ffd166/000000?text=👑');
+}
+
+.info li:nth-child(5)::before {
+  background-image: url('https://via.placeholder.com/25x25/ffd166/000000?text=📜');
+}
+
+.estadisticas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 2rem;
+}
+
+.estadistica {
+  background: linear-gradient(135deg, var(--azul) 0%, var(--azul-oscuro) 100%);
+  border: 3px solid var(--linea);
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 5px 5px 0 var(--sombra);
+  position: relative;
+  overflow: hidden;
+}
+
+.estadistica::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 5px,
+      rgba(255, 255, 255, 0.1) 5px,
+      rgba(255, 255, 255, 0.1) 10px
+    );
+  pointer-events: none;
+}
+
+.estadistica .valor {
+  font-size: 2.5rem;
+  display: block;
+  text-shadow: 3px 3px 0 var(--sombra);
+  color: var(--amarillo);
+}
+
+.estadistica .etiqueta {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.boton-volver {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--rojo);
+  border: 3px solid var(--linea);
+  border-radius: 15px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.3rem;
+  text-align: center;
+  text-shadow: 2px 2px 0 var(--linea);
+  box-shadow: 
+    5px 5px 0 var(--sombra),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Architects Daughter', cursive;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 
+    2px 2px 0 var(--sombra),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  background-color: var(--azul);
+}
+
+.boton-volver::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-image: url('https://via.placeholder.com/30x30/ffffff/000000?text=⬅');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  animation: slideLeft 1s infinite ease-in-out alternate;
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-5px); }
+}
+
+footer {
+  background-color: var(--rojo);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 8px solid var(--linea);
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 0 var(--linea);
+  box-shadow: 0 -5px 15px var(--sombra);
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-image: url('https://via.placeholder.com/100x30/ffd166/000000?text=★+★+★+★+★');
+  background-repeat: repeat-x;
+  opacity: 0.6;
+}
+
+footer p {
+  position: relative;
+  z-index: 2;
+}
+
+.decoracion {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.decoracion-1 {
+  top: 20%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  border: 6px solid var(--rojo);
+  border-radius: 50%;
+  transform: rotate(15deg);
+}
+
+.decoracion-2 {
+  bottom: 30%;
+  right: 5%;
+  width: 150px;
+  height: 150px;
+  background-color: var(--azul);
+  border: 8px dashed var(--linea);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 1024px) {
+  .contenido-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .perfil-card {
+    min-height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .estadisticas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    margin: 20px 15px 0 15px;
+    padding: 2rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1.4rem;
+  }
+  
+  .header-img-left, .header-img-right {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .info, .perfil-card {
+    padding: 1.5rem;
+  }
+  
+  body::before {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .estadisticas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    padding: 3px 15px;
+  }
+  
+  .header-img-left, .header-img-right {
+    display: none;
+  }
+  
+  .info h2 {
+    font-size: 1.6rem;
+  }
+  
+  .info li {
+    padding-left: 40px;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .boton-volver {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="decoracion decoracion-1"></div>
+<div class="decoracion decoracion-2"></div>
+
+<header>
+  <div class="header-img-left"></div>
+  <div class="header-img-right"></div>
+  <h1>Cartoon Imperial</h1>
+  <p>Creador</p>
+</header>
+
+<main>
+  <div class="contenido-grid">
+    <div class="perfil-card">
+      <div class="avatar" style="background-image: url('https://yalmil.github.io/Wiki--imperiales/imagenes/cartoon.png');"></div>
+      <div class="perfil-info">
+        <p><strong>Raza:</strong> oso Alteris</p>
+        <p><strong>Edad:</strong> Desconocida</p>
+        <p><strong>Título:</strong>Creador</p>
+      </div>
+    </div>
+
+    <div class="contenido-principal">
+      <div class="info">
+        <h2>Historia</h2>
+        <p>un ser nacido de la realidad antes de llegar su verdadero poder paso por varias vida mortales sin conocimientos sobre su poder ni vidas anteriores ni futuras</p>
+      </div>
+
+      <div class="info">
+        <h2>Habilidades</h2>
+        <ul>
+          <li>Espadachín experto - Maestro del estilo "Tempestad"</li>
+          <li>Control del rayo - Puede convocar tormentas eléctricas</li>
+          <li>Resistencia sobrehumana - Aguanta condiciones extremas</li>
+          <li>Liderazgo carismático - Inspira a sus tropas en batalla</li>
+          <li>Estratega militar - Ganó 12 batallas sin perder una</li>
+        </ul>
+        
+        <div class="estadisticas">
+          <div class="estadistica">
+            <span class="valor">98%</span>
+            <span class="etiqueta">Fuerza</span>
+          </div>
+          <div class="estadistica">
+            <span class="valor">95%</span>
+            <span class="etiqueta">Habilidad</span>
+          </div>
+          <div class="estadistica">
+            <span class="valor">90%</span>
+            <span class="etiqueta">Magia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info">
+        <h2>Equipamiento</h2>
+        <p><strong>Espada:</strong> Tormenta Celestial - Una espada forjada con metal de meteorito que canaliza rayos.</p>
+        <p><strong>Armadura:</strong> Placas de Trueno - Armadura de placas azul acero con runas de protección.</p>
+        <p><strong>Reliquia:</strong> Amuleto del Trono - Le permite controlar el clima en su entorno inmediato.</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="categorias.html" class="boton-volver">Volver a categorías</a>
+</main>
+
+<footer>
+  <p>© 2026 Imperiales Wiki - Cartoon</p>
+</footer>
+</body>
+</html>

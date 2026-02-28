@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- SEO -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imperiales Wiki</title>
+
+<link rel="icon" href="https://cdn.discordapp.com/icons/1335317820816232563/0258289f76df0f7bbf2354d7bab21f23.png?size=2048" type="image/png">
+<link rel="canonical" href="https://yalmil.pages.dev">
+
+<meta name="title" content="Imperiales Wiki">
+<meta name="description" content="Wiki oficial de los imperiales.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Imperiales Wiki">
+<meta property="og:description" content="Wiki oficial de los imperiales.">
+<meta property="og:image" content="https://cdn.discordapp.com/icons/1335317820816232563/0258289f76df0f7bbf2354d7bab21f23.png?size=2048">
+<meta property="og:url" content="https://yalmil.pages.dev">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Imperiales Wiki">
+<meta name="twitter:description" content="Wiki oficial de los imperiales.">
+<meta name="twitter:image" content="https://cdn.discordapp.com/icons/1335317820816232563/0258289f76df0f7bbf2354d7bab21f23.png?size=2048">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comic+Neue:wght@400;700&display=swap');
+  
+/* Reset y variables */
+:root {
+  --rojo: #e63946;
+  --rojo-oscuro: #d00000;
+  --azul: #457b9d;
+  --azul-oscuro: #1d3557;
+  --amarillo: #ffd166;
+  --papel: #fefae0;
+  --linea: #333;
+  --sombra: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  min-height: 100vh;
+  background-color: var(--papel);
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.05) 24px, rgba(0, 0, 0, 0.05) 25px),
+    repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.05) 24px, rgba(0, 0, 0, 0.05) 25px);
+  color: var(--linea);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efecto de esquina doblada */
+body::before {
+  content: "";
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, transparent 50%, var(--rojo) 50%);
+  z-index: 100;
+  transform: rotate(0deg);
+  box-shadow: -3px 3px 5px var(--sombra);
+  border-radius: 0 0 0 10px;
+}
+
+/* Header estilo dibujo */
+header {
+  background-color: var(--azul);
+  color: white;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin: 30px 30px 0 30px;
+  border: 4px solid var(--linea);
+  border-radius: 15px;
+  box-shadow: 
+    8px 8px 0 var(--sombra),
+    inset 0 0 0 2px white;
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+
+/* Efecto de cinta */
+header::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 30px;
+  background-color: var(--rojo);
+  border: 3px solid var(--linea);
+  border-radius: 5px;
+  z-index: 2;
+  box-shadow: 0 4px 0 var(--sombra);
+}
+
+header::after {
+  content: "★ WIKI ★";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  z-index: 3;
+  text-shadow: 2px 2px 0 var(--linea);
+  letter-spacing: 2px;
+}
+
+header h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 
+    3px 3px 0 var(--azul-oscuro),
+    6px 6px 0 var(--sombra);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+header p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--amarillo);
+  text-shadow: 2px 2px 0 var(--linea);
+  position: relative;
+  z-index: 1;
+}
+
+/* Contenido principal estilo dibujo */
+main {
+  flex: 1;
+  padding: 3rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.content-wrapper {
+  background-color: white;
+  border: 4px solid var(--linea);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+  box-shadow: 
+    10px 10px 0 var(--sombra),
+    inset 0 0 0 2px var(--papel);
+  position: relative;
+  background-image: 
+    linear-gradient(transparent 98%, var(--linea) 98%),
+    linear-gradient(90deg, transparent 98%, var(--linea) 98%);
+  background-size: 30px 30px, 30px 30px;
+  overflow: hidden;
+}
+
+/* Clip en la esquina superior derecha */
+.content-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent 50%, var(--rojo) 50%);
+  border-left: 4px solid var(--linea);
+  border-bottom: 4px solid var(--linea);
+  border-radius: 0 15px 0 0;
+}
+
+/* Título estilo dibujo */
+main h2 {
+  font-size: 2.4rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  font-family: 'Architects Daughter', cursive;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 4px dashed var(--rojo);
+  display: inline-block;
+}
+
+/* Subrayado con rotulador */
+main h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--amarillo);
+  opacity: 0.4;
+  z-index: -1;
+  transform: skewX(-15deg);
+}
+
+main p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: var(--linea);
+  line-height: 1.8;
+  padding: 0 10px;
+  position: relative;
+}
+
+/* Marcas de lápiz en el texto */
+main p::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--azul);
+  opacity: 0.3;
+  border-radius: 2px;
+}
+
+/* Lista estilo dibujo */
+ul {
+  margin-top: 2rem;
+  list-style: none;
+  padding-left: 10px;
+}
+
+ul li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 40px;
+}
+
+/* Marca de viñeta dibujada */
+ul li::before {
+  content: "✎";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.8rem;
+  color: var(--rojo);
+  transform: rotate(-15deg);
+  text-shadow: 2px 2px 0 var(--sombra);
+}
+
+/* Enlace estilo botón dibujado */
+ul li a {
+  display: inline-block;
+  padding: 1.2rem 2rem;
+  background-color: var(--azul);
+  border: 3px solid var(--linea);
+  border-radius: 15px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.2s ease;
+  position: relative;
+  font-size: 1.3rem;
+  text-align: center;
+  text-shadow: 2px 2px 0 var(--azul-oscuro);
+  box-shadow: 
+    5px 5px 0 var(--sombra),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  font-family: 'Architects Daughter', cursive;
+}
+
+/* Efecto hover del botón */
+ul li a:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 
+    2px 2px 0 var(--sombra),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  background-color: var(--rojo);
+}
+
+/* Rayas decorativas en el botón */
+ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.1) 10px,
+      rgba(255, 255, 255, 0.1) 20px
+    );
+  pointer-events: none;
+}
+
+/* Icono del botón */
+ul li a::after {
+  content: "📚";
+  margin-left: 10px;
+  font-size: 1.5rem;
+  filter: drop-shadow(2px 2px 0 var(--sombra));
+  display: inline-block;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Footer estilo dibujo */
+footer {
+  background-color: var(--rojo);
+  color: white;
+  padding: 1.8rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 8px solid var(--linea);
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 0 var(--linea);
+  box-shadow: 0 -5px 15px var(--sombra);
+  overflow: hidden;
+}
+
+/* Patrón de estrellas en el footer */
+footer::before {
+  content: "✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  color: var(--amarillo);
+  font-size: 1.5rem;
+  letter-spacing: 15px;
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Efecto de "mancha de tinta" */
+footer::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--azul);
+  opacity: 0.2;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+footer p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Líneas de cuaderno en toda la página */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 50px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--rojo);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Elementos decorativos adicionales */
+.decoracion {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.decoracion-1 {
+  top: 20%;
+  left: 5%;
+  width: 100px;
+  height: 100px;
+  border: 8px solid var(--azul);
+  border-radius: 50%;
+  transform: rotate(15deg);
+}
+
+.decoracion-2 {
+  bottom: 30%;
+  right: 10%;
+  width: 150px;
+  height: 80px;
+  border: 6px dashed var(--rojo);
+  transform: rotate(-10deg);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    margin: 20px 15px 0 15px;
+    padding: 2rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  main {
+    padding: 2rem 1rem;
+  }
+  
+  .content-wrapper {
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+  
+  main h2 {
+    font-size: 2rem;
+  }
+  
+  ul li a {
+    max-width: 100%;
+    padding: 1rem 1.5rem;
+  }
+  
+  body::before {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+    text-shadow: 
+      2px 2px 0 var(--azul-oscuro),
+      4px 4px 0 var(--sombra);
+  }
+  
+  header p {
+    font-size: 1rem;
+  }
+  
+  main h2 {
+    font-size: 1.8rem;
+  }
+  
+  .content-wrapper {
+    padding: 1.5rem;
+  }
+  
+  main p {
+    font-size: 1.1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+<!-- Elementos decorativos -->
+<div class="decoracion decoracion-1"></div>
+<div class="decoracion decoracion-2"></div>
+
+<header>
+  <h1>Imperiales Wiki</h1>
+  <p>Wiki de los imperiales</p>
+</header>
+
+<main>
+  <div class="content-wrapper">
+    <h2>¡Bienvenido!</h2>
+    <p>Esta wiki contiene información oficial sobre personajes, lugares y eventos del fascinante universo de los Imperiales.</p>
+
+    <ul>
+      <li><a href="categorias.html">Explorar Categorías</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Imperiales Wiki - Cartoon</p>
+</footer>
+</body>
+</html>

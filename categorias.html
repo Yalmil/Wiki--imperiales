@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- SEO -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Imperiales Wiki</title>
+
+<link rel="icon" href="https://cdn.discordapp.com/icons/1335317820816232563/0258289f76df0f7bbf2354d7bab21f23.png?size=2048" type="image/png">
+<link rel="canonical" href="https://yalmil.pages.dev">
+
+<meta name="title" content="Imperiales Wiki">
+<meta name="description" content="Wiki oficial de los imperiales.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Imperiales Wiki">
+<meta property="og:description" content="Wiki oficial de los imperiales.">
+<meta property="og:image" content="https://cdn.discordapp.com/icons/1335317820816232563/0258289f76df0f7bbf2354d7bab21f23.png?size=2048">
+<meta property="og:url" content="https://yalmil.pages.dev">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Imperiales Wiki">
+<meta name="twitter:description" content="Wiki oficial de los imperiales.">
+<meta name="twitter:image" content="https://cdn.discordapp.com/icons/1335317820816232563/0258289f76df0f7bbf2354d7bab21f23.png?size=2048">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comic+Neue:wght@400;700&display=swap');
+  
+/* Reset y variables - Coincide con el estilo del index */
+:root {
+  --rojo: #e63946;
+  --rojo-oscuro: #d00000;
+  --azul: #457b9d;
+  --azul-oscuro: #1d3557;
+  --amarillo: #ffd166;
+  --papel: #fefae0;
+  --linea: #333;
+  --sombra: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comic Neue', cursive;
+  min-height: 100vh;
+  background-color: var(--papel);
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0, 0, 0, 0.05) 24px, rgba(0, 0, 0, 0.05) 25px),
+    repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0, 0, 0, 0.05) 24px, rgba(0, 0, 0, 0.05) 25px);
+  color: var(--linea);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Esquina doblada como en el index */
+body::before {
+  content: "";
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, transparent 50%, var(--rojo) 50%);
+  z-index: 100;
+  transform: rotate(0deg);
+  box-shadow: -3px 3px 5px var(--sombra);
+  border-radius: 0 0 0 10px;
+}
+
+/* Header estilo dibujo */
+header {
+  background-color: var(--azul);
+  color: white;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin: 30px 30px 0 30px;
+  border: 4px solid var(--linea);
+  border-radius: 15px;
+  box-shadow: 
+    8px 8px 0 var(--sombra),
+    inset 0 0 0 2px white;
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+
+/* Pegatina en la esquina */
+header::after {
+  content: "CATEGORÍAS";
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background-color: var(--rojo);
+  color: white;
+  padding: 5px 15px;
+  border: 3px solid var(--linea);
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transform: rotate(5deg);
+  box-shadow: 3px 3px 0 var(--sombra);
+  text-shadow: 1px 1px 0 var(--linea);
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 
+    3px 3px 0 var(--azul-oscuro),
+    6px 6px 0 var(--sombra);
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* Contenido principal */
+main {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+/* Grid de categorías */
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin: 2rem 0 3rem;
+}
+
+/* Tarjeta de categoría estilo dibujo */
+.categoria-card {
+  background-color: white;
+  border: 4px solid var(--linea);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 
+    10px 10px 0 var(--sombra),
+    inset 0 0 0 2px var(--papel);
+  position: relative;
+  transition: all 0.3s ease;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.categoria-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+  box-shadow: 
+    15px 15px 0 var(--sombra),
+    inset 0 0 0 2px var(--papel);
+}
+
+/* Efecto de clip en la esquina */
+.categoria-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, transparent 50%, var(--azul) 50%);
+  border-left: 4px solid var(--linea);
+  border-bottom: 4px solid var(--linea);
+  border-radius: 0 15px 0 0;
+  z-index: 1;
+}
+
+/* Encabezado de la tarjeta */
+.categoria-card h2 {
+  font-size: 1.8rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 10px;
+  font-family: 'Architects Daughter', cursive;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 3px dashed var(--rojo);
+  display: inline-block;
+  z-index: 2;
+}
+
+/* Subrayado con rotulador */
+.categoria-card h2::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--amarillo);
+  opacity: 0.4;
+  z-index: -1;
+  transform: skewX(-10deg);
+}
+
+/* Icono decorativo */
+.categoria-card h2::before {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--rojo);
+  border: 3px solid var(--linea);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* Lista de elementos */
+.categoria-card ul {
+  list-style: none;
+  flex-grow: 1;
+  margin-top: 1rem;
+  padding-left: 10px;
+}
+
+.categoria-card li {
+  margin-bottom: 1rem;
+  padding-left: 35px;
+  position: relative;
+  font-size: 1.2rem;
+}
+
+/* Viñetas personalizadas */
+.categoria-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--linea);
+  border-radius: 50%;
+  background-color: var(--amarillo);
+}
+
+/* Enlace especial (solo para Personajes) */
+.categoria-card a {
+  color: var(--rojo-oscuro);
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s ease;
+  border-bottom: 2px dotted var(--rojo);
+  padding-bottom: 2px;
+}
+
+.categoria-card a:hover {
+  color: var(--azul-oscuro);
+  transform: translateX(5px);
+  border-bottom: 2px solid var(--azul);
+}
+
+/* Flecha animada para enlaces */
+.categoria-card a::after {
+  content: "→";
+  margin-left: 5px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.categoria-card a:hover::after {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Elementos sin enlace (solo texto) */
+.categoria-card li:not(:has(a)) {
+  color: var(--azul-oscuro);
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Botón de volver */
+.boton-volver {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--rojo);
+  border: 3px solid var(--linea);
+  border-radius: 15px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.3rem;
+  text-align: center;
+  text-shadow: 2px 2px 0 var(--linea);
+  box-shadow: 
+    5px 5px 0 var(--sombra),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Architects Daughter', cursive;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 
+    2px 2px 0 var(--sombra),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  background-color: var(--azul);
+}
+
+/* Flecha del botón */
+.boton-volver::before {
+  content: "⬅";
+  margin-right: 10px;
+  font-size: 1.5rem;
+  display: inline-block;
+  animation: slideLeft 1s infinite ease-in-out alternate;
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-5px); }
+}
+
+/* Rayas decorativas en el botón */
+.boton-volver::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.1) 8px,
+      rgba(255, 255, 255, 0.1) 16px
+    );
+  pointer-events: none;
+}
+
+/* Footer estilo dibujo */
+footer {
+  background-color: var(--rojo);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 8px solid var(--linea);
+  position: relative;
+  font-family: 'Architects Daughter', cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 0 var(--linea);
+  box-shadow: 0 -5px 15px var(--sombra);
+  overflow: hidden;
+}
+
+/* Patrón de estrellas en el footer */
+footer::before {
+  content: "✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  color: var(--amarillo);
+  font-size: 1.5rem;
+  letter-spacing: 15px;
+  opacity: 0.6;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+footer p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Decoraciones de página */
+.decoracion {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.decoracion-1 {
+  top: 40%;
+  left: 5%;
+  width: 80px;
+  height: 80px;
+  border: 6px dashed var(--azul);
+  border-radius: 50%;
+  transform: rotate(20deg);
+}
+
+.decoracion-2 {
+  bottom: 20%;
+  right: 5%;
+  width: 120px;
+  height: 60px;
+  border: 4px solid var(--rojo);
+  border-radius: 30px;
+  transform: rotate(-15deg);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .categorias-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  header {
+    margin: 20px 15px 0 15px;
+    padding: 1.5rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .categorias-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .categoria-card {
+    min-height: 220px;
+    padding: 1.5rem;
+  }
+  
+  .categoria-card h2 {
+    font-size: 1.6rem;
+  }
+  
+  header {
+    margin: 15px 10px 0 10px;
+  }
+  
+  body::before {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 2rem;
+    text-shadow: 
+      2px 2px 0 var(--azul-oscuro),
+      4px 4px 0 var(--sombra);
+  }
+  
+  .categoria-card {
+    padding: 1.2rem;
+  }
+  
+  .categoria-card h2 {
+    font-size: 1.4rem;
+  }
+  
+  .categoria-card li {
+    font-size: 1.1rem;
+  }
+  
+  .boton-volver {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+  
+  main {
+    padding: 1.5rem 1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+<!-- Elementos decorativos -->
+<div class="decoracion decoracion-1"></div>
+<div class="decoracion decoracion-2"></div>
+
+<header>
+  <h1>Categorías</h1>
+</header>
+
+<main>
+  <div class="categorias-grid">
+    <div class="categoria-card">
+      <h2>👤 Personajes</h2>
+      <ul>
+        <li><a href="cartoon">Cartoon</a></li>
+        <li>Próximamente...</li>
+        <li>Más personajes en camino</li>
+      </ul>
+    </div>
+
+    <div class="categoria-card">
+      <h2>🌍 Lugares</h2>
+      <ul>
+        <li>Reino de Eldoria</li>
+        <li>Montañas del Olvido</li>
+        <li>Bosque de los Susurros</li>
+      </ul>
+    </div>
+
+    <div class="categoria-card">
+      <h2>🗡️ Objetos</h2>
+      <ul>
+        <li>Espada del Alba</li>
+        <li>Escudo de Ébano</li>
+        <li>Amuleto Estelar</li>
+      </ul>
+    </div>
+    
+    <div class="categoria-card">
+      <h2>📖 Historias</h2>
+      <ul>
+        <li>La Gran Guerra</li>
+        <li>La Profecía Antigua</li>
+        <li>Crónicas del Norte</li>
+      </ul>
+    </div>
+    
+    <div class="categoria-card">
+      <h2>🎨 Arte</h2>
+      <ul>
+        <li>Concept Arts</li>
+        <li>Ilustraciones</li>
+        <li>Mapas del Mundo</li>
+      </ul>
+    </div>
+    
+    <div class="categoria-card">
+      <h2>🔮 Misterios</h2>
+      <ul>
+        <li>Secretos Ocultos</li>
+        <li>Leyendas Urbanas</li>
+        <li>Enigmas por Resolver</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="index.html" class="boton-volver">Volver al inicio</a>
+</main>
+
+<footer>
+  <p>© 2026 Imperiales Wiki - Cartoon</p>
+</footer>
+</body>
+</html>
